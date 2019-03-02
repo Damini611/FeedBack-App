@@ -5,7 +5,7 @@ const passport = require('passport');
 //We only want to import strategy properrt of passport-google-oauth20 module
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 var port = process.env.PORT || 5000;
-var test = require('./config/keys');
+//var test = require('./config/keys');
 
 //app is the Express object that listens to the specifies port and "/" specifies the route"
 //This method will watch for requests accessing "/"
