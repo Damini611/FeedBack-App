@@ -15,7 +15,7 @@ passport.serializeUser((user, done) => {
   done(null,user.id);
 });
 
-//This function turns user id into user object 
+//This function turns user id into user object
 passport.deserializeUser((id, done) => {
   User.findById(id)
   .then((user) => {
@@ -30,7 +30,8 @@ passport.use(new GoogleStrategy(
   {
   clientID: test.Googleclientid,
   clientSecret: test.Googlesecretclientid,
-  callbackURL: "/auth/google/callback"
+  callbackURL: "/auth/google/callback",
+  proxy:true
 },
   //callback function whenever user is redirected to callbackURL
    (accessToken, refreshToken, profile, done) => {
