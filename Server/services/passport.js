@@ -30,8 +30,7 @@ passport.use(new GoogleStrategy(
   {
   clientID: keys.Googleclientid,
   clientSecret: keys.Googlesecretclientid,
-  callbackURL: '/auth/google/callback',
-  proxy:true
+  callbackURL: '/auth/google/callback'
 },
   //callback function whenever user is redirected to callbackURL
    (accessToken, refreshToken, profile, done) => {

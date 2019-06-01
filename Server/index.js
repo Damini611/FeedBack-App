@@ -14,8 +14,9 @@ const port = process.env.PORT || 5000;
 const authRoutes = require('./routes/authRoutes.js');
 
 //connect to the remote instance of mongodb database
-mongoose.connect(data.mongoURI,{useNewUrlParser: true}, function(err){
-   if (err) { return console.error('failed');}
+mongoose.connect(data.mongoURI,{useNewUrlParser: true})
+.then(function(){
+  console.log("DB connection successfully");
 });
 
 const app = express();
