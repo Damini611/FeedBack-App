@@ -1,7 +1,7 @@
 const passport = require('passport');
 //We only want to import strategy property of passport-google-oauth20 module
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-var test = require('../config/keys');
+var keys = require('../config/keys');
 const mongoose = require('mongoose');
 
 //Fetching the userscollection from mongodb
@@ -28,10 +28,9 @@ passport.deserializeUser((id, done) => {
 //Passport object uses google strategy object whic is imported at the top of the page
 passport.use(new GoogleStrategy(
   {
-  clientID: test.Googleclientid,
-  clientSecret: test.Googlesecretclientid,
-  callbackURL: "/auth/google/callback",
-  proxy:true
+  clientID: keys.Googleclientid,
+  clientSecret: keys.Googlesecretclientid,
+  callbackURL: '/auth/google/callback',
 },
   //callback function whenever user is redirected to callbackURL
    (accessToken, refreshToken, profile, done) => {
